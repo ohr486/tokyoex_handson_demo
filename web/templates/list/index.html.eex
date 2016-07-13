@@ -1,1 +1,21 @@
-<h1>hello, phoenix handson demo. this is list skelton</h1>
+<div class="row">
+  <%= for a <- @list do %>
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <%= a.title %>
+        </div>
+        <div class="panel-body">
+          <a href="<%= a.url %>" class="thumbnail" target="_blank">
+            <%= if a.og_image == nil || a.og_image == "" do %>
+              No Image
+            <% else %>
+              <img src="<%= a.og_image %>" width="100%" height="100%">
+            <% end %>
+          </a>
+          <%= a.og_description |> String.slice(0, 50) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

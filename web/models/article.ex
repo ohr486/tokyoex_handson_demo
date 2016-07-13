@@ -19,4 +19,9 @@ defmodule TokyoexHandsonDemo.Article do
     |> cast(params, [:title, :url, :og_title, :og_image, :og_description])
     |> validate_required([:title, :url, :og_title, :og_image, :og_description])
   end
+
+  def exist_with_url(url) do
+    q = Ecto.Query.from(a in __MODULE__, where: a.url == ^url)
+    TokyoexHandsonDemo.Repo.all(q) |> Enum.count > 0
+  end
 end

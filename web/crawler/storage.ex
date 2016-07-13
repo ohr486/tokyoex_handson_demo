@@ -36,4 +36,31 @@ defmodule TokyoexHandsonDemo.Crawler.Storage do
       map
     end
   end
+
+  def store_to_db do
+    IO.puts "--- Save storage to DB ---"
+    dump
+    |> Enum.each(fn {url, data} ->
+      store_article_to_db(url, data)
+    end)
+  end
+
+  def store_article_to_db(url, data) do
+    try do
+      if TokyoexHandsonDemo.Article.exist_with_url(url) do
+        IO.puts "#{url} is arleady inserted!"
+      else
+        TokyoexHandsonDemo.Repo.insert!(%TokyoexHandsonDemo.Article{
+          url: url, 
+          title: data |> Map.get(:title),
+          og_title: data |> Map.get(:og_title),
+          og_image: data |> Map.get(:og_image),
+          og_description: data |> Map.get(:og_description)
+        })
+        IO.puts "#{url} is inserted!"
+      end
+    rescue
+      _ -> IO.puts "#{url} is rescued!"
+    end 
+  end
 end
