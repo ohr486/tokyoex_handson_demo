@@ -24,3 +24,15 @@ $ iex -S mix phoenix.server
 
 * Site List
 ``$ open http://localhost:4000/list``
+
+## クローリング
+
+```
+$ iex -S mix phoenix.server
+```
+
+```
+> TokyoexHandsonDemo.Crawler.Storage.start_link
+> TokyoexHandsonDemo.Crawler.Engine.crawl("http://postd.cc",1,~r/^http:\/\/postd\.cc\/.*\/$/)
+> TokyoexHandsonDemo.Crawler.Storage.store_to_db
+```
