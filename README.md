@@ -8,6 +8,7 @@ tokyo.ex phoenix handson demo app
 $ mix deps.get
 $ mix compile
 $ mix ecto.setup
+$ npm install
 ```
 
 ## 起動
