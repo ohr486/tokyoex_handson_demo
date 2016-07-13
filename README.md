@@ -7,8 +7,7 @@ tokyo.ex phoenix handson demo app
 ```
 $ mix deps.get
 $ mix compile
-$ mix ecto.create
-$ mix ecto.migrate
+$ mix ecto.setup
 ```
 
 ## 起動
