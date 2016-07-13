@@ -1,0 +1,33 @@
+<h2>Show article</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @article.title %>
+  </li>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @article.url %>
+  </li>
+
+  <li>
+    <strong>Og title:</strong>
+    <%= @article.og_title %>
+  </li>
+
+  <li>
+    <strong>Og image:</strong>
+    <%= @article.og_image %>
+  </li>
+
+  <li>
+    <strong>Og description:</strong>
+    <%= @article.og_description %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: article_path(@conn, :edit, @article) %>
+<%= link "Back", to: article_path(@conn, :index) %>
