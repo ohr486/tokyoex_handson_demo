@@ -13,17 +13,17 @@ Gitterのイベントルームを用意しました、[こちら][gitter]から�
 
 MySQL rootパスワード設定は下記の通りです。
 
-{% highlight sh %}
+```sh
 $ # MySQL 5.7.6 以後
 $ mysql -u root -p -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '';"
 $
 $ # MySQL 5.7.5 以前
 $ mysql -u root -p -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('');"
-{% endhighlight %}
+```
 
 ## セットアップ
 
-```
+```sh
 $ mix deps.get
 $ mix compile
 $ mix ecto.setup
@@ -32,20 +32,20 @@ $ npm install
 
 ## config/prod.secret.exsの再生方
 
-```
+```sh
 $ SECRET_KEY_BASE=$(elixir -e ":crypto.strong_rand_bytes(48) |> Base.encode64 |> IO.puts")
 $ sed "s/SECRET_KEY_BASE/$SECRET_KEY_BASE/" config/prod.secret.exs.example >config/prod.secret.exs
 ```
 
 新しいsecret_key_baseが欲しい時に下記のコマンドが役に立ちます。
 
-```
+```sh
 $ elixir -e ":crypto.strong_rand_bytes(48) |> Base.encode64 |> IO.puts"
 ```
 
 ## 起動
 
-```
+```sh
 $ iex -S mix phoenix.server
 ```
 
@@ -60,11 +60,11 @@ $ iex -S mix phoenix.server
 
 ## クローリング
 
-```
+```sh
 $ iex -S mix phoenix.server
 ```
 
-```
+```elixir
 > TokyoexHandsonDemo.Crawler.Storage.start_link
 > TokyoexHandsonDemo.Crawler.Engine.crawl("http://postd.cc",1,~r/^http:\/\/postd\.cc\/.*\/$/)
 > TokyoexHandsonDemo.Crawler.Storage.store_to_db
