@@ -9,6 +9,17 @@ Gitterのイベントルームを用意しました、[こちら][gitter]から�
 - MySQLのインストール
     - ハンズオンで使用するdatabaseとアカウントの作成
 - (可能であれば)AWSアカウントの作成
+- 必要無いが、静的ファイルを管理する為にnpmとbrunch.ioが有ると良い
+
+MySQL rootパスワード設定は下記の通りです。
+
+{% highlight sh %}
+$ # MySQL 5.7.6 以後
+$ mysql -u root -p -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '';"
+$
+$ # MySQL 5.7.5 以前
+$ mysql -u root -p -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('');"
+{% endhighlight %}
 
 ## セットアップ
 
@@ -17,6 +28,19 @@ $ mix deps.get
 $ mix compile
 $ mix ecto.setup
 $ npm install
+```
+
+## config/prod.secret.exsの再生方
+
+```
+$ SECRET_KEY_BASE=$(elixir -e ":crypto.strong_rand_bytes(48) |> Base.encode64 |> IO.puts")
+$ sed "s/SECRET_KEY_BASE/$SECRET_KEY_BASE/" config/prod.secret.exs.example >config/prod.secret.exs
+```
+
+新しいsecret_key_baseが欲しい時に下記のコマンドが役に立ちます。
+
+```
+$ elixir -e ":crypto.strong_rand_bytes(48) |> Base.encode64 |> IO.puts"
 ```
 
 ## 起動
