@@ -1,7 +1,13 @@
 # tokyoex_handson_demo
 tokyo.ex phoenix handson demo app
 
-Gitterのイベントルームを用意しました、[こちら](https://gitter.im/ohr486/tokyo_ex_event?utm_source=share-link&utm_medium=link&utm_campaign=share-link)からご参加下さい。
+Gitterのイベントルームを用意しました、[こちら][gitter]からご参加下さい。
+
+## 事前準備
+
+- elixirのインストール
+- MySQLのインストール
+- (可能であれば)AWSアカウントの作成
 
 ## セットアップ
 
@@ -38,3 +44,12 @@ $ iex -S mix phoenix.server
 > TokyoexHandsonDemo.Crawler.Engine.crawl("http://postd.cc",1,~r/^http:\/\/postd\.cc\/.*\/$/)
 > TokyoexHandsonDemo.Crawler.Storage.store_to_db
 ```
+
+## リンク
+
+- [Conpass tokyo.ex #4 phoenixハンズオン][conpass]
+- [Gitter, ohr486/tokyo_ex_event][gitter]
+
+[conpass]: http://beam-lang.connpass.com/event/34985/
+[gitter]: https://gitter.im/ohr486/tokyo_ex_event?utm_source=share-link&utm_medium=link&utm_campaign=share-link
+
