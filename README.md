@@ -74,7 +74,9 @@ $ iex -S mix phoenix.server
 
 - [Conpass tokyo.ex #4 phoenixハンズオン][conpass]
 - [Gitter, ohr486/tokyo_ex_event][gitter]
+- [Elixir School日本語版][elixir_school_jp]
 
 [conpass]: http://beam-lang.connpass.com/event/34985/
 [gitter]: https://gitter.im/ohr486/tokyo_ex_event?utm_source=share-link&utm_medium=link&utm_campaign=share-link
+[elixir_school_jp]: https://elixirschool.com/jp/
 
