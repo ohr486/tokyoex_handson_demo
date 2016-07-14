@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# Install on path:
+# cp snippets/mix-snippet $(which mix)-snippet
+#
+# Use the following shebang line to execute
+# mix snippets from the command line.
+#
+#!/usr/bin/env mix-snippet
+
+mix run "$1"
