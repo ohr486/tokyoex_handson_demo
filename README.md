@@ -1,6 +1,7 @@
 # tokyoex_handson_demo
 tokyo.ex phoenix handson demo app
 
+Gitterのイベントルームを用意しました、[こちら](https://gitter.im/ohr486/tokyo_ex_event?utm_source=share-link&utm_medium=link&utm_campaign=share-link)からご参加下さい。
 
 ## セットアップ
 
