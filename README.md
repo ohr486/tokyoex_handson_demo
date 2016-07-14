@@ -34,7 +34,7 @@ $ npm install
 
 ```sh
 $ SECRET_KEY_BASE=$(elixir -e ":crypto.strong_rand_bytes(48) |> Base.encode64 |> IO.puts")
-$ sed "s/SECRET_KEY_BASE/$SECRET_KEY_BASE/" config/prod.secret.exs.example >config/prod.secret.exs
+$ sed "s|SECRET_KEY_BASE|$SECRET_KEY_BASE|" config/prod.secret.exs.example >config/prod.secret.exs
 ```
 
 新しいsecret_key_baseが欲しい時に下記のコマンドが役に立ちます。
