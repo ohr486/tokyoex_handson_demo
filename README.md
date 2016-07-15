@@ -86,6 +86,9 @@ $ iex -S mix phoenix.server
 - [【英語】「ElixirConfUS 2015」動画][elixirconfus-2015]
 - [【英語】「The Road to 2 Million Websocket Connections in Phoenix」記事][phoenix-2-million]
 - [【英語】「#elixir-lang」IRCチャンネル][elixir-lang-irc]
+- [【英語】「Elixir/Phoenix」slack][elixir-slack]
+- [【英語】「Foreign Processes and Phoenix」][elixir_supervise_process]
+- [【日本語】「Erlang(Elixir)の使いどころについて使ってる人から教わった話」][elixir_where_use]
 
 ### Erlang
 - [【英語】「Learn You Some Erlang for great good!」無料ウェブ書籍][erlang_book]
@@ -109,6 +112,9 @@ $ iex -S mix phoenix.server
 [elixirconfus-2015]: http://bit.ly/1Ly8Dug
 [phoenix-2-million]: http://www.phoenixframework.org/blog/the-road-to-2-million-websocket-connections
 [elixir-lang-irc]: http://irc.lc/freenode/elixir-lang
+[elixir-slack]: https://elixir-slackin.herokuapp.com/
+[elixir_where_use]: http://togetter.com/li/977171
+[elixir_supervise_process]: https://shift.infinite.red/foreign-processes-and-phoenix-555179c24151
 
 [erlang_book]: http://learnyousomeerlang.com
 [programming_erlang_en]: https://www.amazon.co.jp/dp/193778553X
