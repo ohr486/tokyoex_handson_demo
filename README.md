@@ -86,6 +86,8 @@ $ iex -S mix phoenix.server
 - [【英語】「ElixirConfUS 2015」動画][elixirconfus-2015]
 - [【英語】「The Road to 2 Million Websocket Connections in Phoenix」記事][phoenix-2-million]
 - [【英語】「#elixir-lang」IRCチャンネル][elixir-lang-irc]
+- [「プログラミングErlang」][programming_erlang]
+- [「すごいErlangゆかいに学ぼう!」][erlang_book_jp]
 
 [conpass]: http://beam-lang.connpass.com/event/34985/
 [gitter]: https://gitter.im/ohr486/tokyo_ex_event?utm_source=share-link&utm_medium=link&utm_campaign=share-link
@@ -101,4 +103,6 @@ $ iex -S mix phoenix.server
 [elixirconfus-2015]: http://bit.ly/1Ly8Dug
 [phoenix-2-million]: http://www.phoenixframework.org/blog/the-road-to-2-million-websocket-connections
 [elixir-lang-irc]: http://irc.lc/freenode/elixir-lang
+[programming_erlang]: https://www.amazon.co.jp/dp/4274067149
+[erlang_book_jp]: https://www.amazon.co.jp/dp/4274069125
 
