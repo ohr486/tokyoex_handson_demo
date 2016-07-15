@@ -72,6 +72,7 @@ $ iex -S mix phoenix.server
 
 ## リンク
 
+### Elixir
 - [Conpass tokyo.ex #4 phoenixハンズオン][conpass]
 - [Gitter, ohr486/tokyo_ex_event][gitter]
 - [Elixir School日本語版][elixir_school_jp]
@@ -81,13 +82,18 @@ $ iex -S mix phoenix.server
 - [【英語】「Programming Phoenix」書籍][phoenix_book]
 - [【英語】「Metaprogramming Elixir」書籍][metaprogramming_book]
 - [【英語】「Elixir and Phoenix」書籍、2016年9月10日発売予定][elixir_phoenix_book]
-- [【英語】「Learn You Some Erlang for great good!」無料ウェブ書籍][erlang_book]
 - [【英語】「ElixirConfEU 2016」動画][elixirconfeu-2016]
 - [【英語】「ElixirConfUS 2015」動画][elixirconfus-2015]
 - [【英語】「The Road to 2 Million Websocket Connections in Phoenix」記事][phoenix-2-million]
 - [【英語】「#elixir-lang」IRCチャンネル][elixir-lang-irc]
+
+### Erlang
+- [【英語】「Learn You Some Erlang for great good!」無料ウェブ書籍][erlang_book]
+- [【英語】「Programming Erlang 2nd Edition」][programming_erlang_en]
+- [【英語】「Designing for Scalability With Erlang/OTP」][designing_erlang_otp]
 - [【日本語】「プログラミングErlang」書籍][programming_erlang]
 - [【日本語】「すごいErlangゆかいに学ぼう!」書籍][erlang_book_jp]
+
 
 [conpass]: http://beam-lang.connpass.com/event/34985/
 [gitter]: https://gitter.im/ohr486/tokyo_ex_event?utm_source=share-link&utm_medium=link&utm_campaign=share-link
@@ -98,11 +104,13 @@ $ iex -S mix phoenix.server
 [phoenix_book]: https://pragprog.com/book/phoenix/programming-phoenix
 [metaprogramming_book]: https://pragprog.com/book/cmelixir/metaprogramming-elixir
 [elixir_phoenix_book]: https://pragprog.com/book/lhelph/elixir-and-phoenix
-[erlang_book]: http://learnyousomeerlang.com
 [elixirconfeu-2016]: http://bit.ly/1TrVaqC
 [elixirconfus-2015]: http://bit.ly/1Ly8Dug
 [phoenix-2-million]: http://www.phoenixframework.org/blog/the-road-to-2-million-websocket-connections
 [elixir-lang-irc]: http://irc.lc/freenode/elixir-lang
+
+[erlang_book]: http://learnyousomeerlang.com
+[programming_erlang_en]: https://www.amazon.co.jp/dp/193778553X
+[designing_erlang_otp]: https://www.amazon.co.jp/dp/1449320732
 [programming_erlang]: https://www.amazon.co.jp/dp/4274067149
 [erlang_book_jp]: https://www.amazon.co.jp/dp/4274069125
-
