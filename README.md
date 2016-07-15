@@ -91,6 +91,7 @@ $ iex -S mix phoenix.server
 - [【英語】「Learn You Some Erlang for great good!」無料ウェブ書籍][erlang_book]
 - [【英語】「Programming Erlang 2nd Edition」][programming_erlang_en]
 - [【英語】「Designing for Scalability With Erlang/OTP」][designing_erlang_otp]
+- [【英語】「How do Erlang Microprocesses work internally?」reddit][erlang_internally]
 - [【日本語】「プログラミングErlang」書籍][programming_erlang]
 - [【日本語】「すごいErlangゆかいに学ぼう!」書籍][erlang_book_jp]
 
@@ -112,5 +113,6 @@ $ iex -S mix phoenix.server
 [erlang_book]: http://learnyousomeerlang.com
 [programming_erlang_en]: https://www.amazon.co.jp/dp/193778553X
 [designing_erlang_otp]: https://www.amazon.co.jp/dp/1449320732
+[erlang_internally]: https://www.reddit.com/r/erlang/comments/4sogzb/how_do_erlang_microprocesses_work_internally/
 [programming_erlang]: https://www.amazon.co.jp/dp/4274067149
 [erlang_book_jp]: https://www.amazon.co.jp/dp/4274069125
