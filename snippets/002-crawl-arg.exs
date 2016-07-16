@@ -5,6 +5,7 @@
 #   iex -S mix run snippets/002-crawl-arg.exs [url [depth] url [depth] ...]
 #   iex -S mix
 #     iex(1)> c "snippets/002-crawl-arg.exs"
+#     iex(2)> Script.main ["http://postd.cc", "1"]
 
 defmodule Script do
   def main([]) do
