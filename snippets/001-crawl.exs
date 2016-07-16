@@ -3,6 +3,8 @@
 # Usage:
 #   mix run snippets/001-crawl.exs
 #   iex -S mix run snippets/001-crawl.exs
+#   iex -S mix
+#     iex(1)> c "snippets/001-crawl.exs"
 
 url = "http://postd.cc"
 depth = 1
