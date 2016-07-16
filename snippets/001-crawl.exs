@@ -1,7 +1,8 @@
 #!/usr/bin/env mix-snippet
 #
-# mix run snippets/001-crawl.exs
-# iex -S mix run snippets/001-crawl.exs
+# Usage:
+#   mix run snippets/001-crawl.exs
+#   iex -S mix run snippets/001-crawl.exs
 
 url = "http://postd.cc"
 depth = 1
