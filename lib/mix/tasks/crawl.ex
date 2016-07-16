@@ -1,4 +1,10 @@
+# mix crawl task
 # lib/mix/tasks/crawl.ex
+#
+# Usage:
+#   mix crawl [url [depth] url [depth] ...]
+#   iex -S mix crawl [url [depth] url [depth] ...]
+
 defmodule Mix.Tasks.Crawl do
   use Mix.Task
 
