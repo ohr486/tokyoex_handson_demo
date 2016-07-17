@@ -1,4 +1,6 @@
 defmodule TokyoexHandsonDemo.Crawler.Storage do
+  require Logger
+
   def start_link do
     Agent.start_link(fn -> Map.new end, name: __MODULE__)
   end
@@ -10,35 +12,35 @@ defmodule TokyoexHandsonDemo.Crawler.Storage do
   end
 
   def put_page(url, pages) do
-    IO.puts "--- Put " <> url <> " ---"
+    Logger.debug "--- Put #{url} ---"
     Agent.update __MODULE__, fn map ->
       Map.put(map, url, pages)
     end
   end
 
   def clear_all do
-    IO.puts "--- Clear All ---"
+    Logger.debug "--- Clear All ---"
     Agent.update __MODULE__, fn _map ->
       Map.new
     end
   end
 
   def keys do
-    IO.puts "--- Show Keys ---"
+    Logger.debug "--- Show Keys ---"
     Agent.get __MODULE__, fn map ->
       Map.keys(map)
     end
   end
 
   def dump do
-    IO.puts "--- Dump All ---"
+    Logger.debug "--- Dump All ---"
     Agent.get __MODULE__, fn map ->
       map
     end
   end
 
   def store_to_db do
-    IO.puts "--- Save storage to DB ---"
+    Logger.debug "--- Save storage to DB ---"
     dump
     |> Enum.each(fn {url, data} ->
       store_article_to_db(url, data)
@@ -48,7 +50,7 @@ defmodule TokyoexHandsonDemo.Crawler.Storage do
   def store_article_to_db(url, data) do
     try do
       if TokyoexHandsonDemo.Article.exist_with_url(url) do
-        IO.puts "#{url} is arleady inserted!"
+        Logger.debug "#{url} is arleady inserted!"
       else
         TokyoexHandsonDemo.Repo.insert!(%TokyoexHandsonDemo.Article{
           url: url, 
@@ -57,10 +59,10 @@ defmodule TokyoexHandsonDemo.Crawler.Storage do
           og_image: data |> Map.get(:og_image),
           og_description: data |> Map.get(:og_description)
         })
-        IO.puts "#{url} is inserted!"
+        Logger.debug "#{url} is inserted!"
       end
     rescue
-      _ -> IO.puts "#{url} is rescued!"
+      _ -> Logger.debug "#{url} is rescued!"
     end 
   end
 end

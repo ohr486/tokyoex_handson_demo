@@ -1,14 +1,16 @@
 defmodule TokyoexHandsonDemo.Crawler.Engine do
+  require Logger
+
   def get_site(url) do
-    IO.puts "### Get " <> url <> " ###"
+    Logger.debug "### Get #{url} ###"
     %{body: body} = HTTPoison.get!(url)
     body
   end
 
   def crawl(url, 0, _) do
-    IO.puts "### Crawl " <> url <> " ###"
+    Logger.debug "### Crawl #{url} ###"
     if TokyoexHandsonDemo.Crawler.Storage.has_page?(url) do
-      IO.puts "### already putted " <> url <> " ###"
+      Logger.debug "### already putted #{url} ###"
     else
       Task.async(fn ->
         site = get_site(url) |> TokyoexHandsonDemo.Crawler.Parser.parse_html
@@ -19,7 +21,7 @@ defmodule TokyoexHandsonDemo.Crawler.Engine do
   end
 
   def crawl(url, depth, pattern) do
-    IO.puts "### Crawling " <> url <> ", depth=#{inspect depth} ###"
+    Logger.debug "### Crawling #{url}, depth=#{inspect depth} ###"
     body = get_site(url)
     site = body |> TokyoexHandsonDemo.Crawler.Parser.parse_html
 
