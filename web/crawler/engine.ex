@@ -7,7 +7,11 @@ defmodule TokyoexHandsonDemo.Crawler.Engine do
     body
   end
 
-  def crawl(url, 0, _) do
+  def crawl(url, depth, pattern) do
+    crawl(url, url, depth, pattern)
+  end
+
+  defp crawl(url, _base_url, 0, _) do
     Logger.debug "### Crawl #{url} ###"
     if TokyoexHandsonDemo.Crawler.Storage.has_page?(url) do
       Logger.debug "### already put #{url} ###"
@@ -19,7 +23,7 @@ defmodule TokyoexHandsonDemo.Crawler.Engine do
     end
   end
 
-  def crawl(url, depth, pattern) do
+  defp crawl(url, base_url, depth, pattern) do
     Logger.debug "### Crawling #{url}, depth=#{inspect depth} ###"
     body = get_site(url)
     site = body |> TokyoexHandsonDemo.Crawler.Parser.parse_html
@@ -29,9 +33,19 @@ defmodule TokyoexHandsonDemo.Crawler.Engine do
 
     TokyoexHandsonDemo.Crawler.Parser.parse_link(body, pattern)
     |> Enum.map(fn url ->
-      crawl(url, (depth - 1), pattern)
+      url
+      |> normalize_url(base_url)
+      |> crawl(depth - 1, pattern)
     end)
     |> Enum.reject(&(&1 == :ok))
     |> Enum.each(&Task.await(&1, 10_000))
+  end
+
+  defp normalize_url(url, base_url) do
+    if String.starts_with?(url, ".") or String.starts_with?(url, "/") do
+      Path.join(base_url, url)
+    else
+      url
+    end
   end
 end

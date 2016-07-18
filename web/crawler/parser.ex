@@ -1,7 +1,7 @@
 defmodule TokyoexHandsonDemo.Crawler.Parser do
   def parse_link(body, pattern \\ ~r//) do
     body
-    |> Floki.find("a[href^=http]")
+    |> Floki.find("a")
     |> Floki.attribute("href")
     |> Enum.filter(fn link ->
       Regex.match?(pattern, link)
