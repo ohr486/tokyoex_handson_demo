@@ -10,7 +10,7 @@ defmodule TokyoexHandsonDemo.Crawler.Engine do
   def crawl(url, 0, _) do
     Logger.debug "### Crawl #{url} ###"
     if TokyoexHandsonDemo.Crawler.Storage.has_page?(url) do
-      Logger.debug "### already putted #{url} ###"
+      Logger.debug "### already put #{url} ###"
     else
       Task.async(fn ->
         site = get_site(url) |> TokyoexHandsonDemo.Crawler.Parser.parse_html
