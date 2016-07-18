@@ -16,7 +16,6 @@ defmodule TokyoexHandsonDemo.Crawler.Engine do
         site = get_site(url) |> TokyoexHandsonDemo.Crawler.Parser.parse_html
         TokyoexHandsonDemo.Crawler.Storage.put_page(url, site)
       end)
-      |> Task.await(10000)
     end
   end
 
@@ -25,12 +24,14 @@ defmodule TokyoexHandsonDemo.Crawler.Engine do
     body = get_site(url)
     site = body |> TokyoexHandsonDemo.Crawler.Parser.parse_html
 
-    # TODO: improve me 
+    # TODO: improve me
     TokyoexHandsonDemo.Crawler.Storage.put_page(url, site)
 
     TokyoexHandsonDemo.Crawler.Parser.parse_link(body, pattern)
-    |> Enum.each(fn url ->
+    |> Enum.map(fn url ->
       crawl(url, (depth - 1), pattern)
     end)
+    |> Enum.reject(&(&1 == :ok))
+    |> Enum.each(&Task.await(&1, 10_000))
   end
 end
