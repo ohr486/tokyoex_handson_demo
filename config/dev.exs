@@ -36,6 +36,13 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :tokyoex_handson_demo, TokyoexHandsonDemo.Repo,
   adapter: Ecto.Adapters.MySQL,
+  # RDSを使う場合は以下を使用
+  #hostname: "tokyoexhandson.cxta8l2vl7mq.ap-northeast-1.rds.amazonaws.com",
+  #port: 3306,
+  #username: "tokyoex",
+  #password: "handsondemo",
+  #database: "yourdatabasename",
+  # ローカルのDBを使う場合は以下を使用
   username: "root",
   password: "",
   database: "tokyoex_handson_demo_dev",
